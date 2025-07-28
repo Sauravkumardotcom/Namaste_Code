@@ -36,13 +36,13 @@ export default function HomePage() {
           >
             <a
               href="#projects"
-              className="border shadow-2xl border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
+              className="border shadow-2xl border-[var(--accent)] hover:shadow-[0_0_15px_var(--accent)] transition hover:bg-[var(--accent)] hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              className="border shadow-2xl border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
+              className="border shadow-2xl border-[var(--accent)] hover:bg-[var(--accent)] hover:shadow-[0_0_15px_var(--accent)]  hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
             >
               Contact Me
             </a>
@@ -55,13 +55,13 @@ export default function HomePage() {
             transition={{ delay: 0.9, duration: 0.6 }}
             className="mt-10 flex gap-5"
           >
-            <a href="https://github.com" target="_blank" className="hover:text-[var(--accent)]">
+            <a href="https://github.com" target="_blank" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
               <Github size={28} />
             </a>
-            <a href="https://linkedin.com" target="_blank" className="hover:text-[var(--accent)]">
+            <a href="https://linkedin.com" target="_blank" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
               <Linkedin size={28} />
             </a>
-            <a href="mailto:saurav@email.com" className="hover:text-[var(--accent)]">
+            <a href="mailto:saurav@email.com" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
               <Mail size={28} />
             </a>
           </motion.div>
@@ -100,7 +100,7 @@ export default function HomePage() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="flex flex-wrap justify-center gap-6"
         >
-          <img src="/assets/React.webp" alt="React" className="h-12 shadow-2xl" />
+         <img src="/assets/React.webp" alt="React" className="h-12 shadow-2xl " />
           <img src="/assets/Node_js.webp" alt="Node.js" className="h-12 rounded-2xl shadow-2xl mix-blend-hard-light" />
           <img src="/assets/Express_js.png" alt="Express" className="h-12 shadow-2xl" />
           <img src="/assets/SQL.webp" alt="SQL" className="h-12  rounded-2xl shadow-2xl" />
@@ -120,7 +120,7 @@ export default function HomePage() {
           Featured Projects
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left">
+          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition">
             <h3 className="text-xl font-semibold mb-2">Portfolio Website</h3>
             <p className="opacity-70">A personal portfolio website to showcase my projects and skills.</p>
             <a
@@ -130,7 +130,7 @@ export default function HomePage() {
               View All Projects
             </a>
           </div>
-          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left">
+          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition">
             <h3 className="text-xl font-semibold mb-2">E-commerce App</h3>
             <p className="opacity-70">A full-stack e-commerce application with user authentication and payment integration.</p>
             <a
@@ -154,11 +154,11 @@ export default function HomePage() {
           Testimonials
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left">
+          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition">
             <p className="opacity-70">“Saurav delivered a top-tier product on time and exceeded all expectations. Highly recommended!”</p>
             <h4 className="mt-4 text-[var(--accent)] font-semibold">— Hiring Manager, Tech Corp</h4>
           </div>
-          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left">
+          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition ">
             <p className="opacity-70">“Incredible eye for design and detail, and his backend logic is top-notch. A rare talent.”</p>
             <h4 className="mt-4 text-[var(--accent)] font-semibold">— CTO, StartX</h4>
           </div>

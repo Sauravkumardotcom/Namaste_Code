@@ -67,7 +67,7 @@ const About = () => {
             className="rounded-2xl overflow-hidden shadow-xl border border-[var(--accent)]"
           >
             <img
-              src="/src/assets/About.jpg"
+              src="/assets/About.jpg"
               alt="About Illustration"
               className="w-full h-full object-cover"
             />

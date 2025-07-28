@@ -37,7 +37,7 @@ const Header = ({ setActiveSection, activeSection }) => {
         <a
           href="#home"
           onClick={() => setActiveSection('home')}
-          className="text-2xl font-bold text-[var(--accent)] hover:opacity-80 transition-opacity"
+          className="text-2xl font-bold text-[var(--accent)]  hover:opacity-80 transition-opacity"
         >
           MyPortfolio
         </a>
@@ -50,7 +50,7 @@ const Header = ({ setActiveSection, activeSection }) => {
               className={`relative font-medium transition-colors duration-200 cursor-pointer ${
                 activeSection === section
                   ? 'text-[var(--accent)]'
-                  : 'text-[var(--text)] hover:text-[var(--accent)]'
+                  : 'text-[var(--text)] hover:text-shadow-[0_0_15px_var(--accent)] transition hover:text-[var(--accent)]'
               }`}
             >
               {name}
