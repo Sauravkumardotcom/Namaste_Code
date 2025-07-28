@@ -75,7 +75,7 @@ export default function HomePage() {
           className="flex-1 flex justify-center"
         >
           <img
-            src="/src/assets/Developer_illustration.webp"
+            src="/assets/Developer_illustration.webp"
             alt="Developer illustration"
             className="w-full max-w-md animate-fade-in"
           />
@@ -100,12 +100,12 @@ export default function HomePage() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="flex flex-wrap justify-center gap-6"
         >
-          <img src="/src/assets/React.webp" alt="React" className="h-12 shadow-2xl" />
-          <img src="/src/assets/Node_js.webp" alt="Node.js" className="h-12 rounded-2xl shadow-2xl mix-blend-hard-light" />
-          <img src="/src/assets/Express_js.png" alt="Express" className="h-12 shadow-2xl" />
-          <img src="/src/assets/SQL.webp" alt="SQL" className="h-12  rounded-2xl shadow-2xl" />
-          <img src="/src/assets/Tailwind.webp" alt="Tailwind" className="h-12 shadow-2xl rounded-2xl" />
-          <img src="/src/assets/GenAi.png" alt="Gen Ai" className="h-12 shadow-2xl rounded-2xl" />
+          <img src="/assets/React.webp" alt="React" className="h-12 shadow-2xl" />
+          <img src="/assets/Node_js.webp" alt="Node.js" className="h-12 rounded-2xl shadow-2xl mix-blend-hard-light" />
+          <img src="/assets/Express_js.png" alt="Express" className="h-12 shadow-2xl" />
+          <img src="/assets/SQL.webp" alt="SQL" className="h-12  rounded-2xl shadow-2xl" />
+          <img src="/assets/Tailwind.webp" alt="Tailwind" className="h-12 shadow-2xl rounded-2xl" />
+          <img src="/assets/GenAi.png" alt="Gen Ai" className="h-12 shadow-2xl rounded-2xl" />
         </motion.div>
       </section>
          {/* Major Projects Section */}
