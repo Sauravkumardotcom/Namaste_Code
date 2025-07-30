@@ -77,6 +77,14 @@ const Project = () => {
       githubLink: "https://github.com/Sauravkumardotcom/Namaste_Code",
       tags: ["React", "Tailwind CSS", "JavaScript"]
     },
+     {
+      title: "Namaste Code Currency",
+      description: "A responsive web app to track and check real-time currency exchange rates. Built with React and Tailwind CSS, it includes live API integration, smooth animations, and a clean, modern UI — ideal for demonstrating frontend development and dynamic data handling skills.",
+      link: "https://namaste-code-currency.vercel.app",
+      image: "/assets/currency.png",
+      githubLink: "https://github.com/Sauravkumardotcom/NamasteCode_Currency",
+      tags: ["React", "Tailwind", "React-Router","Context-Api"]
+    },
     {
       title: "E-commerce App",
       description: "A full-stack e-commerce application with user authentication and payment integration.",
