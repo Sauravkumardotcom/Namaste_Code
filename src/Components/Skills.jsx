@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNode, FaTools, FaDownload, FaPython, FaGitAlt } from "react-icons/fa";
 import { SiTailwindcss, SiMongodb, SiExpress, SiDjango, SiPostgresql } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 const skillsData = {
   Frontend: [
@@ -76,12 +77,12 @@ const Skills = () => {
               {cat}
             </button>
           ))}
-          <a
-            href="#contact"
-            className="px-6 py-2 flex items-center space-x-2 rounded-full bg-[var(--accent)] text-white hover:bg-[var(--accentHover)] text-sm md:text-base shadow-md"
+          <Link
+            to="/contact"
+            className="px-6 py-2 flex items-center space-x-2 rounded-full bg-[var(--accent)] text-red-400 hover:bg-[var(--accentHover)] text-sm md:text-base shadow-md"
           >
-            <FaDownload /> <span>Hire Me</span>
-          </a>
+            <FaDownload  className="text-[var(--text)]"/> <span className="text-[var(--text)]">Hire Me</span>
+          </Link>
         </div>
 
         <AnimatePresence mode="wait">
@@ -98,7 +99,7 @@ const Skills = () => {
                 key={skill.name}
                 drag
                 dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                className="bg-[var(--foreground)] shadow-xl rounded-xl p-6 flex items-center gap-4 cursor-grab border border-[var(--muted)] hover:scale-[1.02] transition-transform duration-200"
+                className="bg-[var(--foreground)] shadow-xl rounded-xl p-6 flex items-center gap-4  border border-[var(--muted)] hover:scale-[1.02] transition-transform duration-200"
                 variants={itemVariants}
                 title={`${skill.name} - ${skill.progress}% Proficiency`}
               >

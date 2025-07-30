@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, Sun, Moon, Home, Info, Folder, Code, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 const Header = ({ setActiveSection, activeSection }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,32 +36,32 @@ const Header = ({ setActiveSection, activeSection }) => {
     <header className="w-full fixed top-0 left-0 z-50 bg-[var(--bg)] text-[var(--text)] shadow-md backdrop-blur-md transition-all duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <a
-          href="#home"
-          onClick={() => setActiveSection('home')}
           className="text-2xl font-bold text-[var(--accent)]  hover:opacity-80 transition-opacity"
         >
           MyPortfolio
         </a>
 
         <nav className="hidden md:flex space-x-8">
-          {navLinks.map(({ name, section }) => (
-            <motion.a
-              key={name}
-              onClick={() => setActiveSection(section)}
-              className={`relative font-medium transition-colors duration-200 cursor-pointer ${
-                activeSection === section
-                  ? 'text-[var(--accent)]'
-                  : 'text-[var(--text)] hover:text-shadow-[0_0_15px_var(--accent)] transition hover:text-[var(--accent)]'
-              }`}
-            >
-              {name}
-              <span
-                className={`absolute left-0 -bottom-1 h-0.5 bg-[var(--accent)] transition-all ${
-                  activeSection === section ? 'w-full' : 'w-0'
-                }`}
-              ></span>
-            </motion.a>
-          ))}
+         {navLinks.map(({ name, section }) => (
+  <motion.div key={section}>
+    <Link
+      to={`/${section === 'home' ? '' : section}`}
+      onClick={() => setActiveSection(section)}
+      className={`relative font-medium transition-colors duration-200 cursor-pointer ${
+        activeSection === section
+          ? 'text-[var(--accent)]'
+          : 'text-[var(--text)] hover:text-shadow-[0_0_15px_var(--accent)] transition hover:text-[var(--accent)]'
+      }`}
+    >
+      {name}
+      <span
+        className={`absolute left-0 -bottom-1 h-0.5 bg-[var(--accent)] transition-all ${
+          activeSection === section ? 'w-full' : 'w-0'
+        }`}
+      ></span>
+    </Link>
+  </motion.div>
+))}
         </nav>
 
         <div className="flex items-center gap-4">
@@ -93,9 +94,10 @@ const Header = ({ setActiveSection, activeSection }) => {
             transition={{ duration: 0.3 }}
             className="md:hidden fixed top-16 right-0 w-64 bg-[var(--bg)] text-[var(--text)] shadow-xl p-4 space-y-2 z-40 rounded-l-xl border-l border-[var(--accent)]"
           >
-            {navLinks.map(({ name, icon, section }) => (
-              <motion.a
-                key={name}
+                    {navLinks.map(({ name, icon, section }) => (
+            <motion.div key={section}>
+              <Link
+                to={`/${section === 'home' ? '' : section}`}
                 onClick={() => {
                   setActiveSection(section);
                   setMenuOpen(false);
@@ -107,8 +109,10 @@ const Header = ({ setActiveSection, activeSection }) => {
                 }`}
               >
                 {icon} {name}
-              </motion.a>
-            ))}
+              </Link>
+            </motion.div>
+          ))}
+          
           </motion.div>
         )}
       </AnimatePresence>

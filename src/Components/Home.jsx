@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
-export default function HomePage() {
+export default function HomePage({onViewProjectClick}) {
   return (
     <main className="min-h-screen bg-[var(--bg)] text-[var(--text)] px-6 py-10 font-sans transition-colors duration-500">
       {/* Hero Section */}
@@ -34,18 +35,18 @@ export default function HomePage() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="mt-8 flex items-center gap-4"
           >
-            <a
-              href="#projects"
-              className="border shadow-2xl border-[var(--accent)] hover:shadow-[0_0_15px_var(--accent)] transition hover:bg-[var(--accent)] hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
+            <Link
+              to='/projects'
+              className="border shadow-2xl border-[var(--accent)] hover:shadow-[0_0_15px_var(--accent)]  hover:bg-[var(--accent)] hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
             >
               View Projects
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/contact"
               className="border shadow-2xl border-[var(--accent)] hover:bg-[var(--accent)] hover:shadow-[0_0_15px_var(--accent)]  hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
             >
               Contact Me
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -55,13 +56,13 @@ export default function HomePage() {
             transition={{ delay: 0.9, duration: 0.6 }}
             className="mt-10 flex gap-5"
           >
-            <a href="https://github.com" target="_blank" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
+            <a href="https://github.com/Sauravkumardotcom/" target="_blank" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
               <Github size={28} />
             </a>
-            <a href="https://linkedin.com" target="_blank" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
+            <a href="https://www.linkedin.com/in/sauravkumardotcom/" target="_blank" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
               <Linkedin size={28} />
             </a>
-            <a href="mailto:saurav@email.com" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
+            <a href="mailto:Souravshakya951@gmail.com" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
               <Mail size={28} />
             </a>
           </motion.div>
@@ -121,18 +122,20 @@ export default function HomePage() {
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition">
-            <h3 className="text-xl font-semibold mb-2">Portfolio Website</h3>
-            <p className="opacity-70">A personal portfolio website to showcase my projects and skills.</p>
+            <h3 className="text-xl font-semibold mb-2">Namaste Code Currency</h3>
+            <p className="opacity-70">A responsive web app to track and check real-time currency exchange rates. Built with React and Tailwind CSS, it includes live API integration, smooth animations, and a clean, modern UI — ideal for demonstrating frontend development and dynamic data handling skills.
+
+</p>
             <a
-              href="#projects"
+              href="https://namaste-code-currency.vercel.app"
               className="mt-4 inline-block text-[var(--accent)] hover:underline font-medium"
             >
-              View All Projects
+              Visit Project
             </a>
           </div>
           <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition">
-            <h3 className="text-xl font-semibold mb-2">E-commerce App</h3>
-            <p className="opacity-70">A full-stack e-commerce application with user authentication and payment integration.</p>
+            <h3 className="text-xl font-semibold mb-2">Real-Time Weather App</h3>
+            <p className="opacity-70">A responsive React app that displays real-time weather using OpenWeatherMap API. Features include location-based search, weather visuals, and a clean Tailwind CSS UI — perfect for showcasing API and frontend skills.</p>
             <a
               href="#projects"
               className="mt-4 inline-block text-[var(--accent)] hover:underline font-medium"
