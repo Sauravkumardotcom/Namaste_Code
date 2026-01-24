@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function HomePage({onViewProjectClick}) {
   return (
-    <main className="min-h-screen mt-4 bg-[var(--bg)] text-[var(--text)] px-6 py-10 font-sans transition-colors duration-500">
+    <main className="min-h-screen mt-40 bg-[var(--bg)] text-[var(--text)] px-6 py-10 font-sans transition-colors duration-500">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
         <div className="flex-1">
