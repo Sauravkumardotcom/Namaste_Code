@@ -53,7 +53,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[var(--accent)] to-[var(--accentHover)]"
         >
-          Get in Touch
+          Let’s build something impactful.
         </Motion.h2>
         <Motion.p
           initial={{ opacity: 0, y: 50 }}
@@ -62,11 +62,10 @@ const Contact = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-lg text-[var(--muted)] max-w-2xl mx-auto mb-12"
         >
-          Whether you have a question, want to collaborate, or just want to say hi,
-          my inbox is always open. I'll try my best to get back to you!
+          I graduated with a BCA in 2025 and have been building several full-stack applications since then. Reach out for collaborations, internships, or software development roles.
         </Motion.p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           <Motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +73,7 @@ const Contact = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="border border-[var(--accent)] hover:shadow-[0_0_15px_var(--accent)] transition shadow-2xl hover:bg-[var(--accent)] hover:text-white text-[var(--accent)] px-6 py-3 rounded-xl"
           >
-            <Mail className="w-8 h-8  mb-4" />
+            <Mail className="w-8 h-8 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Email</h3>
             <p className="opacity-70">Souravshakya951@gmail.com</p>
           </Motion.div>
@@ -86,7 +85,7 @@ const Contact = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="border border-[var(--accent)] shadow-2xl hover:shadow-[0_0_15px_var(--accent)] transition hover:bg-[var(--accent)] hover:text-white text-[var(--accent)] px-6 py-3 rounded-xl"
           >
-            <Phone className="w-8 h-8  mb-4" />
+            <Phone className="w-8 h-8 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Phone</h3>
             <p className="opacity-70">+91 897415811</p>
           </Motion.div>
@@ -100,7 +99,7 @@ const Contact = () => {
           >
             <MapPin className="w-8 h-8 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Location</h3>
-            <p className="opacity-70">Noida, India - 201301</p>
+            <p className="opacity-70">Noida, India • BCA Graduate</p>
           </Motion.div>
         </div>
 

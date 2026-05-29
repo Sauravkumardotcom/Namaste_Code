@@ -1,28 +1,39 @@
 import React, { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNode, FaTools, FaDownload, FaPython, FaGitAlt } from "react-icons/fa";
-import { SiTailwindcss, SiMongodb, SiExpress, SiDjango, SiPostgresql } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNode, FaTools, FaGitAlt, FaDownload, FaJava } from "react-icons/fa";
+import { SiTailwindcss, SiExpress, SiPostgresql, SiMysql, SiSpringboot, SiGooglecloud } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 const skillsData = {
+  Languages: [
+    { name: "Java", icon: <FaJava className="text-orange-500" />, progress: 90 },
+    { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, progress: 88 },
+    { name: "SQL", icon: <SiMysql className="text-blue-500" />, progress: 85 },
+  ],
   Frontend: [
-    { name: "HTML", icon: <FaHtml5 className="text-orange-500" />, progress: 95 },
-    { name: "CSS", icon: <FaCss3Alt className="text-blue-500" />, progress: 90 },
-    { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, progress: 92 },
-    { name: "React", icon: <FaReact className="text-cyan-400" />, progress: 88 },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" />, progress: 85 },
+    { name: "React.js", icon: <FaReact className="text-cyan-400" />, progress: 90 },
+    { name: "HTML5", icon: <FaHtml5 className="text-orange-500" />, progress: 95 },
+    { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" />, progress: 92 },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" />, progress: 88 },
   ],
   Backend: [
-    { name: "Node.js", icon: <FaNode className="text-green-600" />, progress: 87 },
-    { name: "Express.js", icon: <SiExpress className="text-gray-700" />, progress: 83 },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-700" />, progress: 80 },
-    { name: "Django", icon: <SiDjango className="text-green-500" />, progress: 75 },
-    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-600" />, progress: 78 },
+    { name: "Spring Boot", icon: <SiSpringboot className="text-green-600" />, progress: 87 },
+    { name: "Node.js", icon: <FaNode className="text-green-600" />, progress: 84 },
+    { name: "Express.js", icon: <SiExpress className="text-gray-700" />, progress: 82 },
+    { name: "REST APIs", icon: <FaTools className="text-gray-500" />, progress: 89 },
+  ],
+  Database: [
+    { name: "MySQL", icon: <SiMysql className="text-blue-600" />, progress: 88 },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-600" />, progress: 82 },
+  ],
+  Cloud: [
+    { name: "Google Cloud", icon: <SiGooglecloud className="text-blue-400" />, progress: 76 },
+    { name: "Vercel", icon: <FaGitAlt className="text-gray-600" />, progress: 80 },
   ],
   Tools: [
-    { name: "Git", icon: <FaGitAlt className="text-orange-600" />, progress: 85 },
-    { name: "Developer Tools", icon: <FaTools className="text-gray-600" />, progress: 78 },
-    { name: "Python", icon: <FaPython className="text-blue-400" />, progress: 80 },
+    { name: "Git", icon: <FaGitAlt className="text-orange-600" />, progress: 86 },
+    { name: "Postman", icon: <FaTools className="text-gray-600" />, progress: 82 },
+    { name: "JWT Authentication", icon: <FaTools className="text-gray-600" />, progress: 80 },
   ],
 };
 
@@ -46,20 +57,17 @@ const itemVariants = {
 };
 
 const Skills = () => {
-  const [category, setCategory] = useState("Frontend");
+  const [category, setCategory] = useState("Languages");
 
   return (
-    <section
-      id="skills"
-      className="relative bg-gradient-to-br from-[var(--backgroundStart)] to-[var(--backgroundEnd)] text-[var(--text)] px-6 py-20 md:px-20 lg:px-36 transition-colors duration-500"
-    >
+    <section id="skills" className="relative bg-gradient-to-br from-[var(--backgroundStart)] to-[var(--backgroundEnd)] text-[var(--text)] px-6 py-20 md:px-20 lg:px-36 transition-colors duration-500">
       <div className="relative z-10">
         <div className="text-center mb-14">
           <h2 className="text-5xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[var(--accent)] to-[var(--accentHover)]">
-            Tech Stack
+            Core Skills & Technologies
           </h2>
           <p className="text-lg max-w-xl mx-auto text-[var(--muted)]">
-            A curated list of tools, technologies, and frameworks that power my web development journey.
+            Organized by discipline so recruiters can quickly see the full-stack strengths behind the portfolio.
           </p>
         </div>
 
@@ -79,9 +87,9 @@ const Skills = () => {
           ))}
           <Link
             to="/contact"
-            className="px-6 py-2 flex items-center space-x-2 rounded-full bg-[var(--accent)] text-red-400 hover:bg-[var(--accentHover)] text-sm md:text-base shadow-md"
+            className="px-6 py-2 flex items-center space-x-2 rounded-full bg-[var(--accent)] text-white hover:bg-[var(--accentHover)] text-sm md:text-base shadow-md"
           >
-            <FaDownload  className="text-[var(--text)]"/> <span className="text-[var(--text)]">Hire Me</span>
+            <FaDownload className="text-[var(--text)]" /> <span>Connect</span>
           </Link>
         </div>
 
@@ -97,11 +105,9 @@ const Skills = () => {
             {skillsData[category].map((skill) => (
               <Motion.div
                 key={skill.name}
-                drag
-                dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                className="bg-[var(--foreground)] shadow-xl rounded-xl p-6 flex items-center gap-4  border border-[var(--muted)] hover:scale-[1.02] transition-transform duration-200"
+                className="bg-[var(--foreground)] shadow-xl rounded-xl p-6 flex items-center gap-4 border border-[var(--muted)] hover:scale-[1.02] transition-transform duration-200"
                 variants={itemVariants}
-                title={`${skill.name} - ${skill.progress}% Proficiency`}
+                title={`${skill.name} - ${skill.progress}% proficiency`}
               >
                 <div className="text-4xl">{skill.icon}</div>
                 <div className="w-full">
