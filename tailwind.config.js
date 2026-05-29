@@ -1,5 +1,8 @@
-// tailwind.config.js
+/* eslint-env node */
+
 module.exports = {
+  darkMode: 'class',
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
       textShadow: {
@@ -8,35 +11,15 @@ module.exports = {
         lg: '4px 4px 6px rgba(0, 0, 0, 0.5)',
         glow: '0 0 10px #facc15, 0 0 20px #facc15',
       },
-    },
-  },
-  plugins: [
-    require('tailwindcss-textshadow')
-  ]
-}
-module.exports = {
-  darkMode: 'class', // required for manual toggle
-  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-
-// tailwind.config.js
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {
       colors: {
         backgroundStart: 'var(--bg)',
         backgroundEnd: 'var(--bg)',
         foreground: 'var(--text)',
         muted: 'rgba(255,255,255,0.6)',
         accent: 'var(--accent)',
-        accentHover: 'var(--accent)', // Or define a hover version in CSS
+        accentHover: 'var(--accent)',
       },
     },
   },
-  darkMode: false, // You’ll manage it via classes like .light-theme and .dark-theme
+  plugins: [require('tailwindcss-textshadow')],
 };

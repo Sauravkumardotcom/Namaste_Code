@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, Sun, Moon, Home, Info, Folder, Code, Mail } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { Link } from "react-router-dom";
 
 const Header = ({ setActiveSection, activeSection }) => {
@@ -35,15 +35,17 @@ const Header = ({ setActiveSection, activeSection }) => {
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-[var(--bg)] text-[var(--text)] shadow-md backdrop-blur-md transition-all duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <a
-          className="text-2xl font-bold text-[var(--accent)]  hover:opacity-80 transition-opacity"
+        <Link
+          to="/"
+          className="text-2xl font-bold text-[var(--accent)] hover:opacity-80 transition-opacity"
+          aria-label="Go to homepage"
         >
-          MyPortfolio
-        </a>
+          Saurav Kumar
+        </Link>
 
         <nav className="hidden md:flex space-x-8">
          {navLinks.map(({ name, section }) => (
-  <motion.div key={section}>
+  <Motion.div key={section}>
     <Link
       to={`/${section === 'home' ? '' : section}`}
       onClick={() => setActiveSection(section)}
@@ -60,7 +62,7 @@ const Header = ({ setActiveSection, activeSection }) => {
         }`}
       ></span>
     </Link>
-  </motion.div>
+  </Motion.div>
 ))}
         </nav>
 
@@ -68,13 +70,18 @@ const Header = ({ setActiveSection, activeSection }) => {
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="text-[var(--text)] hover:text-[var(--accent)] transition"
-            aria-label="Toggle Theme"
+            aria-label={darkMode ? 'Switch to light theme' : 'Switch to dark theme'}
           >
             {darkMode ? <Sun size={22} /> : <Moon size={22} />}
           </button>
 
           <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)}>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            >
               {menuOpen ? (
                 <X size={28} className="text-[var(--text)]" />
               ) : (
@@ -87,7 +94,7 @@ const Header = ({ setActiveSection, activeSection }) => {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
+          <Motion.div
             initial={{ x: '100%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: '100%', opacity: 0 }}
@@ -95,7 +102,7 @@ const Header = ({ setActiveSection, activeSection }) => {
             className="md:hidden fixed top-16 right-0 w-64 bg-[var(--bg)] text-[var(--text)] shadow-xl p-4 space-y-2 z-40 rounded-l-xl border-l border-[var(--accent)]"
           >
                     {navLinks.map(({ name, icon, section }) => (
-            <motion.div key={section}>
+            <Motion.div key={section}>
               <Link
                 to={`/${section === 'home' ? '' : section}`}
                 onClick={() => {
@@ -110,10 +117,10 @@ const Header = ({ setActiveSection, activeSection }) => {
               >
                 {icon} {name}
               </Link>
-            </motion.div>
+            </Motion.div>
           ))}
           
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
     </header>

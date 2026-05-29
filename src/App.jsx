@@ -77,7 +77,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<HomePage onViewProjectClick={scrollToProjects} />}
+            element={<HomePage />}
           />
           <Route path="/about" element={<div ref={aboutRef}><About /></div>} />
           <Route path="/skills" element={<div ref={skillsRef}><Skills /></div>} />

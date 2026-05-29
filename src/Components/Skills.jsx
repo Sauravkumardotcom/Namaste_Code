@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNode, FaTools, FaDownload, FaPython, FaGitAlt } from "react-icons/fa";
 import { SiTailwindcss, SiMongodb, SiExpress, SiDjango, SiPostgresql } from "react-icons/si";
 import { Link } from "react-router-dom";
@@ -86,7 +86,7 @@ const Skills = () => {
         </div>
 
         <AnimatePresence mode="wait">
-          <motion.div
+          <Motion.div
             key={category}
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={containerVariants}
@@ -95,7 +95,7 @@ const Skills = () => {
             exit="exit"
           >
             {skillsData[category].map((skill) => (
-              <motion.div
+              <Motion.div
                 key={skill.name}
                 drag
                 dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
@@ -110,17 +110,17 @@ const Skills = () => {
                     <span className="text-sm text-[var(--muted)]">{skill.progress}%</span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <motion.div
+                    <Motion.div
                       className="h-full bg-gradient-to-r from-[var(--accent)] to-[var(--accentHover)] rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: `${skill.progress}%` }}
                       transition={{ duration: 1 }}
-                    ></motion.div>
+                    ></Motion.div>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
-          </motion.div>
+          </Motion.div>
         </AnimatePresence>
       </div>
     </section>

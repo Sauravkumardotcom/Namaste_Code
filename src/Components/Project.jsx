@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ExternalLink, Github } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Tooltip } from "@nextui-org/react";
 
 const ProjectCard = ({ title, description, link, image, githubLink, tags = [] }) => (
-  <motion.div 
+  <Motion.div 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -56,7 +56,7 @@ const ProjectCard = ({ title, description, link, image, githubLink, tags = [] })
         <Github className="w-4 h-4" />
       </a>
     </div>
-  </motion.div>
+  </Motion.div>
 );
 
 const Project = () => {
@@ -109,14 +109,14 @@ const Project = () => {
   return (
     <div className="relative bg-[var(--backgroundStart)] to-[var(--backgroundEnd)] py-20 overflow-hidden">
       <div className="text-center max-w-3xl mx-auto mb-16 px-4">
-        <motion.h2
+        <Motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent"
         >
           Projects & Case Studies
-        </motion.h2>
+        </Motion.h2>
         <p className="mt-3 text-[var(--muted)] text-base sm:text-lg">
           From elegant UIs to powerful backends—these projects showcase problem-solving, design thinking, and full-stack delivery.
         </p>

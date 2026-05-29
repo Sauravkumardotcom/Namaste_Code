@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { Sparkles, Lightbulb, Users, Rocket } from 'lucide-react';
 
 const About = () => {
@@ -13,7 +13,7 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -58,9 +58,9 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -71,7 +71,7 @@ const About = () => {
               alt="About Illustration"
               className="w-full h-full object-cover"
             />
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
     </section>

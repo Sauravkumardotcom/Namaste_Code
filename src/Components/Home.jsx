@@ -1,75 +1,74 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function HomePage({onViewProjectClick}) {
+export default function HomePage() {
   return (
     <main className="min-h-screen mt-30 bg-[var(--bg)] text-[var(--text)] px-6 py-10 font-sans transition-colors duration-500">
-      {/* Hero Section */}
       <section className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
         <div className="flex-1">
-          <motion.h1
+          <Motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
           >
-            Hi, I'm <span className="text-[var(--accent)]">Saurav Kumar</span>
-          </motion.h1>
+            I build production-ready web applications with React and Node.js.
+          </Motion.h1>
 
-          <motion.p
+          <Motion.p
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="mt-6 text-lg sm:text-xl text-[var(--text)]/70 max-w-xl"
+            className="mt-6 text-lg sm:text-xl text-[var(--text)]/75 max-w-xl"
           >
-            A passionate <strong className="text-[var(--text)]">Full Stack Developer</strong> crafting seamless user experiences and scalable backend solutions.
-          </motion.p>
+            I deliver polished user experiences, API-first backend systems, and deployable full-stack products for modern web platforms.
+          </Motion.p>
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="mt-8 flex items-center gap-4"
+            className="mt-8 flex flex-wrap items-center gap-4"
           >
             <Link
-              to='/projects'
-              className="border shadow-2xl border-[var(--accent)] hover:shadow-[0_0_15px_var(--accent)]  hover:bg-[var(--accent)] hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
+              to="/projects"
+              className="inline-flex items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--bg)] px-6 py-3 text-[var(--accent)] shadow-lg transition hover:bg-[var(--accent)] hover:text-white"
             >
-              View Projects
+              View Featured Work
             </Link>
             <Link
               to="/contact"
-              className="border shadow-2xl border-[var(--accent)] hover:bg-[var(--accent)] hover:shadow-[0_0_15px_var(--accent)]  hover:text-white transition text-[var(--accent)] px-6 py-3 rounded-full"
+              className="inline-flex items-center justify-center rounded-full border border-transparent bg-[var(--accent)] px-6 py-3 text-white shadow-lg transition hover:bg-[var(--accentHover)]"
             >
               Contact Me
             </Link>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.9, duration: 0.6 }}
-            className="mt-10 flex gap-5"
+            className="mt-10 flex items-center gap-5"
           >
-            <a href="https://github.com/Sauravkumardotcom/" target="_blank" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
+            <a href="https://github.com/Sauravkumardotcom/" target="_blank" rel="noreferrer" className="rounded-xl p-2 hover:bg-[var(--accent)] hover:text-white transition">
               <Github size={28} />
             </a>
-            <a href="https://www.linkedin.com/in/sauravkumardotcom/" target="_blank" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
+            <a href="https://www.linkedin.com/in/sauravkumardotcom/" target="_blank" rel="noreferrer" className="rounded-xl p-2 hover:bg-[var(--accent)] hover:text-white transition">
               <Linkedin size={28} />
             </a>
-            <a href="mailto:Souravshakya951@gmail.com" className="rounded-xl hover:shadow-[0_0_15px_var(--accent)] transition">
+            <a href="mailto:Souravshakya951@gmail.com" className="rounded-xl p-2 hover:bg-[var(--accent)] hover:text-white transition">
               <Mail size={28} />
             </a>
-          </motion.div>
+          </Motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+        <Motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
@@ -78,124 +77,114 @@ export default function HomePage({onViewProjectClick}) {
           <img
             src="/assets/Developer_illustration.webp"
             alt="Developer illustration"
-            className="w-full max-w-md animate-fade-in"
+            className="w-full max-w-md"
           />
-        </motion.div>
+        </Motion.div>
       </section>
 
-      {/* Tech Stack Section */}
       <section className="mt-24 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
+        <Motion.h2
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-3xl sm:text-4xl font-bold mb-6"
         >
-          Tech Stack
-        </motion.h2>
-        <motion.div
+          Core technologies I use every day
+        </Motion.h2>
+        <Motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.8 }}
           className="flex flex-wrap justify-center gap-6"
         >
-         <img src="/assets/React.webp" alt="React" className="h-12 shadow-2xl " />
+          <img src="/assets/React.webp" alt="React" className="h-12 shadow-2xl" />
           <img src="/assets/Node_js.webp" alt="Node.js" className="h-12 rounded-2xl shadow-2xl mix-blend-hard-light" />
           <img src="/assets/Express_js.png" alt="Express" className="h-12 shadow-2xl" />
-          <img src="/assets/SQL.webp" alt="SQL" className="h-12  rounded-2xl shadow-2xl" />
+          <img src="/assets/SQL.webp" alt="SQL" className="h-12 rounded-2xl shadow-2xl" />
           <img src="/assets/Tailwind.webp" alt="Tailwind" className="h-12 shadow-2xl rounded-2xl" />
-          <img src="/assets/GenAi.png" alt="Gen Ai" className="h-12 shadow-2xl rounded-2xl" />
-        </motion.div>
+          <img src="/assets/GenAi.png" alt="AI & automation" className="h-12 shadow-2xl rounded-2xl" />
+        </Motion.div>
       </section>
-         {/* Major Projects Section */}
+
       <section className="mt-24 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
+        <Motion.h2
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-3xl sm:text-4xl font-bold mb-6"
         >
-          Featured Projects
-        </motion.h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition">
-            <h3 className="text-xl font-semibold mb-2">Namaste Code Currency</h3>
-            <p className="opacity-70">A responsive web app to track and check real-time currency exchange rates. Built with React and Tailwind CSS, it includes live API integration, smooth animations, and a clean, modern UI — ideal for demonstrating frontend development and dynamic data handling skills.
+          Selected projects
+        </Motion.h2>
 
-</p>
-            <a
-              href="https://namaste-code-currency.vercel.app"
-              className="mt-4 inline-block text-[var(--accent)] hover:underline font-medium"
-            >
-              Visit Project
+        <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+          <article className="rounded-3xl border border-white/10 bg-[var(--bg)] p-6 shadow-lg transition hover:shadow-[0_0_20px_rgba(245,158,11,0.18)]">
+            <h3 className="text-xl font-semibold mb-3">Movies Space</h3>
+            <p className="text-[var(--text)]/80 mb-4">
+              Full-stack media platform combining video, audio, and social features with React, TypeScript, Express, Prisma, PostgreSQL, and Redis.
+            </p>
+            <div className="flex flex-wrap gap-3 text-sm text-[var(--muted)]">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Express</span>
+              <span>Prisma</span>
+            </div>
+            <a href="https://movies-space-brown.vercel.app/" target="_blank" rel="noreferrer" className="mt-6 inline-flex text-[var(--accent)] hover:underline">
+              Live demo
             </a>
-          </div>
-          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition">
-            <h3 className="text-xl font-semibold mb-2">Real-Time Weather App</h3>
-            <p className="opacity-70">A responsive React app that displays real-time weather using OpenWeatherMap API. Features include location-based search, weather visuals, and a clean Tailwind CSS UI — perfect for showcasing API and frontend skills.</p>
-            <a
-              href="#projects"
-              className="mt-4 inline-block text-[var(--accent)] hover:underline font-medium"
-            >
-              View All Projects
+          </article>
+
+          <article className="rounded-3xl border border-white/10 bg-[var(--bg)] p-6 shadow-lg transition hover:shadow-[0_0_20px_rgba(245,158,11,0.18)]">
+            <h3 className="text-xl font-semibold mb-3">Shakya Labs</h3>
+            <p className="text-[var(--text)]/80 mb-4">
+              Brand website with email capture, bilingual support, and responsive interface designed to communicate services clearly.
+            </p>
+            <div className="flex flex-wrap gap-3 text-sm text-[var(--muted)]">
+              <span>React</span>
+              <span>Tailwind</span>
+              <span>Nodemailer</span>
+              <span>Vite</span>
+            </div>
+            <a href="https://shakya-labs.vercel.app/" target="_blank" rel="noreferrer" className="mt-6 inline-flex text-[var(--accent)] hover:underline">
+              Live demo
             </a>
-          </div>
-        </div>
-      </section>
-      {/* Testimonials Section */}
-      <section className="mt-24 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl font-bold mb-6"
-        >
-          Testimonials
-        </motion.h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition">
-            <p className="opacity-70">“Saurav delivered a top-tier product on time and exceeded all expectations. Highly recommended!”</p>
-            <h4 className="mt-4 text-[var(--accent)] font-semibold">— Hiring Manager, Tech Corp</h4>
-          </div>
-          <div className="p-6 rounded-xl shadow-lg bg-[var(--bg)] text-[var(--text)] text-left hover:shadow-[0_0_15px_var(--accent)] transition ">
-            <p className="opacity-70">“Incredible eye for design and detail, and his backend logic is top-notch. A rare talent.”</p>
-            <h4 className="mt-4 text-[var(--accent)] font-semibold">— CTO, StartX</h4>
-          </div>
-        </div>
-      </section>
+          </article>
 
-      {/* Blog Preview Section */}
-      <section className="mt-24 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl font-bold mb-6"
-        >
-          Latest Blog Posts
-        </motion.h2>
-        <div className="grid md:grid-cols-3  gap-6 max-w-6xl mx-auto">
-          <div className="p-5 rounded-xl shadow-2xl hover:shadow-[0_0_15px_var(--accent)] transition bg-[var(--bg)] text-[var(--text)]">
-            <h3 className="text-xl font-semibold mb-2">10 Tips to Improve Your React Apps</h3>
-            <p className="opacity-70">Best practices, performance hacks, and patterns to enhance your React projects.</p>
-          </div>
-          <div className="p-5 rounded-xl shadow-2xl hover:shadow-[0_0_15px_var(--accent)] transition bg-[var(--bg)] text-[var(--text)]">
-            <h3 className="text-xl font-semibold mb-2">How I Build Full Stack Projects from Scratch</h3>
-            <p className="opacity-70">A complete breakdown of my process from planning to deployment.</p>
-          </div>
-          <div className="p-5 rounded-xl shadow-2xl hover:shadow-[0_0_15px_var(--accent)] transition bg-[var(--bg)] text-[var(--text)]">
-            <h3 className="text-xl font-semibold mb-2">Understanding REST vs GraphQL</h3>
-            <p className="opacity-70">Key differences, when to use which, and real-world examples explained simply.</p>
-          </div>
+          <article className="rounded-3xl border border-white/10 bg-[var(--bg)] p-6 shadow-lg transition hover:shadow-[0_0_20px_rgba(245,158,11,0.18)]">
+            <h3 className="text-xl font-semibold mb-3">Namaste Code Currency</h3>
+            <p className="text-[var(--text)]/80 mb-4">
+              Real-time foreign exchange tool that surfaces live rate data with clean UX and mobile-first interactivity.
+            </p>
+            <div className="flex flex-wrap gap-3 text-sm text-[var(--muted)]">
+              <span>React</span>
+              <span>Tailwind</span>
+              <span>API integration</span>
+              <span>Responsive UI</span>
+            </div>
+            <a href="https://namaste-code-currency.vercel.app" target="_blank" rel="noreferrer" className="mt-6 inline-flex text-[var(--accent)] hover:underline">
+              Live demo
+            </a>
+          </article>
+
+          <article className="rounded-3xl border border-white/10 bg-[var(--bg)] p-6 shadow-lg transition hover:shadow-[0_0_20px_rgba(245,158,11,0.18)]">
+            <h3 className="text-xl font-semibold mb-3">Portfolio Website</h3>
+            <p className="text-[var(--text)]/80 mb-4">
+              The production portfolio is built with React, Tailwind CSS, and Vite, showcasing my work, skills, and contact path.
+            </p>
+            <div className="flex flex-wrap gap-3 text-sm text-[var(--muted)]">
+              <span>React</span>
+              <span>Tailwind</span>
+              <span>Vite</span>
+              <span>UX</span>
+            </div>
+            <a href="https://github.com/Sauravkumardotcom/Namaste_Code" target="_blank" rel="noreferrer" className="mt-6 inline-flex text-[var(--accent)] hover:underline">
+              View source
+            </a>
+          </article>
         </div>
       </section>
-
-    
     </main>
   );
 }
