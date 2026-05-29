@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, Sun, Moon, Home, Info, Folder, Code, Mail } from 'lucide-react';
-import { AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { Link } from "react-router-dom";
 
 const Header = ({ setActiveSection, activeSection }) => {
